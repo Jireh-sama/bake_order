@@ -13,13 +13,13 @@ def create_frame(parent, bg_color=None, width=None, height=None, b_radius=0):
   return frame
   
 def create_image(parent, path, width, height):
-  # Load the image
-  bake_order_logo_path = "./assets//media//bake-order-logo.png"
-  original_image = Image.open(path)
-
-  # Resize the image
-  new_size = (width, height)  # Specify the desired size (width, height)
-  resized_image = original_image.resize(new_size)
+    original_image = Image.open(path)
+    new_size = (width, height)  # Specify the desired size (width, height)
+    resized_image = original_image.resize(new_size)
+    photo = ImageTk.PhotoImage(resized_image)
+    image_label = ctk.CTkLabel(parent, image=photo, text="")
+    image_label.image = photo
+    return image_label
 
   # Convert resized image to PhotoImage
   photo = ImageTk.PhotoImage(resized_image)
