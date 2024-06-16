@@ -43,16 +43,10 @@ class BuyFrame(ctk.CTkFrame):
     confirmed_order.confirm_order(customer_order.get_items())
     customer_order.clear_order()
     self.total_price_label.configure(text=f"Total Price: {customer_order.get_total()}")
-    
+
   def create_widgets(self):
-    # Label
-    # self.text_label = create_label(parent=self, text="This is the Customer Frame")
-    # self.text_label.pack()
-
-    # Button to go back to main window
-    # self.back_button = ctk.CTkButton(self, text="Back", command=self.go_back)
-    # self.back_button.pack(pady=10)
-
+    #####################ITEM ONE######################
+    ###################################################
     self.item_frame1 = create_frame(self, width=228, height=250, bg_color="#F8EDE3")
     self.item1_label = create_label(self.item_frame1, f"{item1.name} ₱{item1.price}")
     self.item1_label.configure(height=250)
@@ -64,7 +58,8 @@ class BuyFrame(ctk.CTkFrame):
     self.item1_btn = create_button(self.item_frame1, "Order Now", command=lambda: self.add_item(name=item1.name,price=item1.price, quantity=self.quantity_selector_item1.get_quantity()), width=80, height=30, bg_color="#D0B8A8", b_raduis=15)
     self.item1_btn.place(relx=0.80, rely=0.95, anchor="s")
 
-    ###################################################1
+    #####################ITEM TWO######################
+    ###################################################
     self.item_frame2 = create_frame(self, width=228, height=250, bg_color="#F8EDE3")
     self.item2_label = create_label(self.item_frame2, f"{item2.name} ₱{item2.price}")
     self.item2_label.configure(height=250)
@@ -75,7 +70,8 @@ class BuyFrame(ctk.CTkFrame):
   
     self.item2_btn = create_button(self.item_frame2, "Order Now", command=lambda: self.add_item(name=item2.name,price=item2.price, quantity=self.quantity_selector_item2.get_quantity()), width=80, height=30, bg_color="#D0B8A8", b_raduis=15)
     self.item2_btn.place(relx=0.80, rely=0.95, anchor="s")
-    ###################################################1
+    ###################ITEM THREE######################
+    ###################################################
     self.item_frame3 = create_frame(self, width=228, height=250, bg_color="#F8EDE3")
     self.item3_label = create_label(self.item_frame3, f"{item3.name} ₱{item3.price}")
     self.item3_label.configure(height=250)
@@ -86,7 +82,8 @@ class BuyFrame(ctk.CTkFrame):
   
     self.item3_btn = create_button(self.item_frame3, "Order Now", command=lambda: self.add_item(name=item3.name,price=item3.price, quantity=self.quantity_selector_item3.get_quantity()), width=80, height=30, bg_color="#D0B8A8", b_raduis=15)
     self.item3_btn.place(relx=0.80, rely=0.95, anchor="s")
-    ###################################################1
+    ####################ITEM FOUR######################
+    ###################################################
     self.item_frame4 = create_frame(self, width=228, height=250, bg_color="#F8EDE3")
     self.item4_label = create_label(self.item_frame4, f"{item4.name} ₱{item4.price}")
     self.item4_label.configure(height=250)
@@ -97,7 +94,8 @@ class BuyFrame(ctk.CTkFrame):
   
     self.item4_btn = create_button(self.item_frame4, "Order Now", command=lambda: self.add_item(name=item4.name,price=item4.price, quantity=self.quantity_selector_item4.get_quantity()), width=80, height=30, bg_color="#D0B8A8", b_raduis=15)
     self.item4_btn.place(relx=0.80, rely=0.95, anchor="s")
-    ###################################################1
+    #####################ITEM FIVE#####################
+    ###################################################
     self.item_frame5 = create_frame(self, width=228, height=250, bg_color="#F8EDE3")
     self.item5_label = create_label(self.item_frame5, f"{item5.name} ₱{item5.price}")
     self.item5_label.configure(height=250)
@@ -108,7 +106,8 @@ class BuyFrame(ctk.CTkFrame):
   
     self.item5_btn = create_button(self.item_frame5, "Order Now", command=lambda: self.add_item(name=item5.name,price=item5.price, quantity=self.quantity_selector_item5.get_quantity()), width=80, height=30, bg_color="#D0B8A8", b_raduis=15)
     self.item5_btn.place(relx=0.80, rely=0.95, anchor="s")
-    ###################################################1
+    #####################ITEM SIX######################
+    ###################################################
     self.item_frame6 = create_frame(self, width=228, height=250, bg_color="#F8EDE3")
     self.item6_label = create_label(self.item_frame6, f"{item6.name} ₱{item6.price}")
     self.item6_label.configure(height=250)
@@ -120,12 +119,6 @@ class BuyFrame(ctk.CTkFrame):
     self.item6_btn = create_button(self.item_frame6, "Order Now", command=lambda: self.add_item(name=item6.name,price=item6.price, quantity=self.quantity_selector_item6.get_quantity()), width=80, height=30, bg_color="#D0B8A8", b_raduis=15)
     self.item6_btn.place(relx=0.80, rely=0.95, anchor="s")
     
-
-    
-
-   
-
- 
     # Footer Section
     self.footer_frame = create_frame(self, width=1000, height=110, bg_color="#E49748")
     self.footer_frame.place(relx=0.5, rely=1.0, anchor="s", relwidth=1.0, relheight=0.10)

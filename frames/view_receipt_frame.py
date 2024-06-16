@@ -82,19 +82,8 @@ class ViewReceiptFrame(ctk.CTkFrame):
         self.table_content = create_frame(self.content_frame, bg_color="#F8EDE3", width=100, height=300)
         self.table_content.pack(fill="x")
         self.table_content.pack_propagate(False)
+
         # Dynamic Content Here
-        
-        items = [
-          {'name': 'Redvelvet Cake', 'price': 399},
-          {'name': 'Chocolate Cake', 'price': 299},
-          {'name': 'Vanilla Cake', 'price': 199},
-          {'name': 'Strawberry Cake', 'price': 349},
-          {'name': 'Cheesecake', 'price': 279},
-          {'name': 'Carrot Cake', 'price': 219},
-          {'name': 'Lemon Cake', 'price': 259},
-          {'name': 'Blueberry Muffin', 'price': 149},
-          {'name': 'Apple Pie', 'price': 189},
-        ]
         self.create_item_blocks(parent=self.table_content, items=confirmed_order.confirmed_order_list)
 
         self.line2 = CustomTopBorderFrame(parent=self.content_frame, border_color="black", border_width=3, height=10)
@@ -107,8 +96,6 @@ class ViewReceiptFrame(ctk.CTkFrame):
         self.table_footer_text1.pack(side="left", padx=(50, 0))
         self.table_footer_text2 = create_label(parent=self.table_footer_frame, text=self.get_total())
         self.table_footer_text2.pack(side="right", padx=(0, 50))
-
-
 
         # Footer Frame
         self.footer_frame = create_frame(self, bg_color="#E49748", width=110, height=110)

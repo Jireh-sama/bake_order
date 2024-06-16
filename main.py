@@ -25,8 +25,6 @@ class MainApplication(ctk.CTk):
         self.view_receipt_frame.pack_forget() 
 
     # Open the landing frame
-    # self.main_frame = BuyFrame(self, self.create_main_frame)
-    # self.main_frame = ViewReceiptFrame(self, self.create_main_frame)
     self.main_frame = LandingFrame(self, open_buy=self.open_buy_frame, open_view_receipt=self.open_view_receipt_frame)
     self.main_frame.pack(fill="both", expand=True)
 

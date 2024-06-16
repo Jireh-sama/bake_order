@@ -27,9 +27,5 @@ class LandingFrame(ctk.CTkFrame):
     self.owner_btn = ctk.CTkButton(self.login_frame, text="View Receipt", command=self.open_view_receipt, width=241, height=50, fg_color="#6C3A30", corner_radius=20)
     self.owner_btn.pack(pady=(25, 0))
 
-    
-
-    
-
     self.image_label = create_image(self.cover_frame, path="./assets//media//bake-order-logo.png", width=280, height=200)
     self.image_label.pack(expand=True)
