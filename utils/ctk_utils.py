@@ -21,9 +21,9 @@ def create_image(parent, path, width, height):
     image_label.image = photo
     return image_label
 
-  # Convert resized image to PhotoImage
-  photo = ImageTk.PhotoImage(resized_image)
 
-  # Create a label to display the image
-  image_label = ctk.CTkLabel(parent, image=photo)
-  return image_label
+def create_button(parent, text, command, width, height, bg_color, color=None, b_raduis=0):
+  btn = ctk.CTkButton(parent, text=text, command=command, width=width, height=height, fg_color=bg_color, corner_radius=b_raduis)
+  if color is not None:
+    btn.configure(text_color=color)
+  return btn
