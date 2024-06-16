@@ -17,7 +17,7 @@ class LandingFrame(ctk.CTkFrame):
     self.login_frame = create_frame(parent=self, width=400, height=650, bg_color="#E49748")
     self.login_frame.pack(side="left", fill="both", expand=True)
 
-    self.header_label = create_label(self.login_frame, "Shop Now")
+    self.header_label = create_label(self.login_frame, "Order Now")
     self.header_label.configure(font=("Arial", 34))
     self.header_label.pack(pady=(25, 0))
 

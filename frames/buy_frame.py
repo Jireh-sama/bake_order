@@ -123,13 +123,13 @@ class BuyFrame(ctk.CTkFrame):
     self.footer_frame = create_frame(self, width=1000, height=110, bg_color="#E49748")
     self.footer_frame.place(relx=0.5, rely=1.0, anchor="s", relwidth=1.0, relheight=0.10)
 
-    self.back_btn = create_button(self.footer_frame, "Back", command=self.go_back, width=80, height=30, bg_color="#D0B8A8", b_raduis=15)
+    self.back_btn = create_button(self.footer_frame, "Back", command=self.go_back, width=80, height=30, bg_color="#1B68B7", b_raduis=15)
     self.back_btn.place(relx=0.06, rely=0.72, anchor="s")
 
     self.total_price_label = create_label(self.footer_frame, f"Total Price: {customer_order.get_total()}")
     self.total_price_label.place(relx=0.50, rely=0.72, anchor="s")
 
-    self.confirm_order_btn = create_button(self.footer_frame, "Confirm Order", command=self.confirm_order, width=80, height=30, bg_color="#D0B8A8", b_raduis=15)
+    self.confirm_order_btn = create_button(self.footer_frame, "Confirm Order", command=self.confirm_order, width=80, height=30, bg_color="#1B68B7", b_raduis=15)
     self.confirm_order_btn.place(relx=0.93, rely=0.72, anchor="s")
 
     self.grid_rowconfigure(2, weight=1)  # Allow the row to expand vertically

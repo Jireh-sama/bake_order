@@ -102,7 +102,7 @@ class ViewReceiptFrame(ctk.CTkFrame):
         self.footer_frame.pack(side="top", fill="x")
         self.footer_frame.pack_propagate(False)
 
-        self.back_btn = create_button(parent=self.footer_frame, text="Back", command=self.go_back, width=80, height=30, bg_color="#D0B8A8", b_raduis=15)
+        self.back_btn = create_button(parent=self.footer_frame, text="Back", command=self.go_back, width=80, height=30, bg_color="#1B68B7", b_raduis=15)
         self.back_btn.pack(side="left", padx=(15, 0))
 
 
