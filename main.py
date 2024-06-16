@@ -1,7 +1,8 @@
 import customtkinter as ctk
 from frames.landing_frame import LandingFrame
-from frames.customer_frame import CustomerFrame
-from frames.owner_frame import OwnerFrame
+from frames.buy_frame import BuyFrame
+from frames.view_receipt_frame import ViewReceiptFrame
+
 
 class MainApplication(ctk.CTk):
   def __init__(self):
@@ -15,30 +16,32 @@ class MainApplication(ctk.CTk):
   def create_main_frame(self):
     """
       When this function is called 
-      check if both customer frame or owner frame exist
+      check if both buy frame or view receipt frame exists
       if so hide it
     """
-    if hasattr(self, 'customer_frame'):
-        self.customer_frame.pack_forget() 
-    if hasattr(self, 'owner_frame'):
-        self.owner_frame.pack_forget() 
+    if hasattr(self, 'buy_frame'):
+        self.buy_frame.pack_forget() 
+    if hasattr(self, 'view_receipt_frame'):
+        self.view_receipt_frame.pack_forget() 
 
     # Open the landing frame
-    self.main_frame = LandingFrame(self, open_customer=self.open_customer_frame, open_owner=self.open_owner_frame)
+    # self.main_frame = BuyFrame(self, self.create_main_frame)
+    # self.main_frame = ViewReceiptFrame(self, self.create_main_frame)
+    self.main_frame = LandingFrame(self, open_buy=self.open_buy_frame, open_view_receipt=self.open_view_receipt_frame)
     self.main_frame.pack(fill="both", expand=True)
 
-
-  def open_customer_frame(self):
-    # Hide main frame and open customer frame
+    
+  def open_buy_frame(self):
+    # Hide main frame and open buy frame
     self.main_frame.pack_forget()
-    self.customer_frame = CustomerFrame(self, self.create_main_frame)
-    self.customer_frame.pack(fill="both", expand=True)
+    self.buy_frame = BuyFrame(self, self.create_main_frame)
+    self.buy_frame.pack(fill="both", expand=True)
 
-  def open_owner_frame(self):
-    # Hide main frame and open owner frame
+  def open_view_receipt_frame(self):
+    # Hide main frame and open view receipt frame
     self.main_frame.pack_forget()
-    self.owner_frame = OwnerFrame(self, self.create_main_frame)
-    self.owner_frame.pack(fill="both", expand=True)
+    self.view_receipt_frame = ViewReceiptFrame(self, self.create_main_frame)
+    self.view_receipt_frame.pack(fill="both", expand=True)
 
 if __name__ == "__main__":
     app = MainApplication()
